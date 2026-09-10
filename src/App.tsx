@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 import { ProfesionalesPage } from "./pages/ProfesionalesPage";
+import { TramitesPage } from "./pages/TramitesPage";
 
 function App() {
   return (
@@ -14,7 +15,9 @@ function App() {
             <NavLink to="/profesionales" className={({ isActive }) => (isActive ? "active" : "")}>
               Profesionales
             </NavLink>
-            <span>Tramites (proximamente)</span>
+            <NavLink to="/tramites" className={({ isActive }) => (isActive ? "active" : "")}>
+              Tramites
+            </NavLink>
             <span>Expedientes (proximamente)</span>
           </nav>
         </aside>
@@ -23,6 +26,7 @@ function App() {
           <Routes>
             <Route path="/" element={<ProfesionalesPage />} />
             <Route path="/profesionales" element={<ProfesionalesPage />} />
+            <Route path="/tramites" element={<TramitesPage />} />
           </Routes>
         </div>
       </div>
