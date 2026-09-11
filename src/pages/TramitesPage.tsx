@@ -96,6 +96,7 @@ export function TramitesPage() {
   return (
     <div>
       <h1>Tramites</h1>
+      <p className="page-subtitle">Alta y seguimiento de trámites y sus expedientes.</p>
 
       <div className="card">
         <form onSubmit={handleSubmit} className="form-grid">

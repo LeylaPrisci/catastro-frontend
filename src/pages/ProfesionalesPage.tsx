@@ -1,4 +1,4 @@
-import { useEffect, useState, FormEvent } from "react";
+import { useEffect, useState, type SubmitEvent } from "react";
 import { api } from "../api/client";
 
 interface Profesional {
@@ -45,7 +45,7 @@ export function ProfesionalesPage() {
     cargarProfesionales();
   }, []);
 
-  async function handleSubmit(e: FormEvent) {
+  async function handleSubmit(e: SubmitEvent<HTMLFormElement>) {
     e.preventDefault();
     setEnviando(true);
     setError(null);
@@ -67,6 +67,7 @@ export function ProfesionalesPage() {
   return (
     <div>
       <h1>Profesionales</h1>
+      <p className="page-subtitle">Alta y administración de profesionales habilitados.</p>
 
       <div className="card">
         <form onSubmit={handleSubmit} className="form-grid">
