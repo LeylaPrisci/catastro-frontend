@@ -427,3 +427,22 @@ tbody tr:last-child td {
   color: var(--color-text-muted);
   margin-top: 0.2rem;
 }
+
+.requisito-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.requisito-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.9rem;
+}
+
+.requisito-row:last-child {
+  border-bottom: none;
+}

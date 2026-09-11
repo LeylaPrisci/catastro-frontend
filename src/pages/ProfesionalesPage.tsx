@@ -1,5 +1,5 @@
 import { useEffect, useState, type SubmitEvent } from "react";
-import { api } from "../api/client";
+import { api, extraerMensajeError } from "../api/client";
 
 interface Profesional {
   id: string;
@@ -56,9 +56,8 @@ export function ProfesionalesPage() {
       setMatricula("");
       setRol(ROLES[0]);
       await cargarProfesionales();
-    } catch (err: any) {
-      const mensajes = err?.response?.data?.message;
-      setError(Array.isArray(mensajes) ? mensajes.join(", ") : "Error al crear el profesional.");
+    } catch (err) {
+      setError(extraerMensajeError(err, "Error al crear el profesional."));
     } finally {
       setEnviando(false);
     }
